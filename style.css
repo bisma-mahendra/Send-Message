@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+body {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(37, 37, 255);
+}
+.wrapper{
+    width: 720px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    
+}
+.wrapper header{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(134, 134, 134, 0.219);
+}
+.wrapper form{
+    margin: 35px 30px;
+}
+form .dbl-field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.dbl-field .field{
+    height: 50px;
+    position: relative;
+    width: calc(100%/2 - 13px);
+}
+form .field input,
+form .message textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 18px 0 48px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgba(14, 14, 14, 0.219);
+}
+form .field input::placeholder,
+form .message textarea::placeholder{
+    color: rgba(14, 14, 14, 0.219);
+}
+.wrapper .field i{
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    font-size: 18px;
+    color: rgba(14, 14, 14, 0.219);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+form .message{
+    position: relative;
+}
+form .message textarea{
+    position: relative;
+    padding-top: 12px;
+    min-height: 120px;
+}
+form .message i{
+    position: absolute;
+    left: 18px;
+    top: 24px;
+    font-size: 20px;
+    color: rgba(14, 14, 14, 0.219);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.field input:focus,
+.message textarea:focus
+{
+    border: 2px solid rgb(45, 22, 255);
+}
+.field input:focus ~ i,
+.message textarea:focus ~ i
+{
+    color: #0D6EFD;
+}
+form .button-area{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+}
+form .button-area button{
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(45, 22, 255);
+}
+form .button-area button:hover{
+    background-color: rgb(16, 0, 165);
+}
+.button-area span{
+    font-size: 14px;
+    margin-left: 20px;
+    color: blue;
+    display: none;
+}
+@media(max-width: 600px){
+    .wrapper header{
+        text-align: center;
+    }
+    form .dbl-field{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .dbl-field .field{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    form .message{
+        margin-top: 10px;
+    }
+    form .message textarea{
+        resize: none;
+    }
+    form .button-area{
+        flex-direction: column;
+    }
+    .button-area button{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
