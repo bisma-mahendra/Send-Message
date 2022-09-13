@@ -14,7 +14,7 @@ form.onsubmit = (e)=>{
         if(xhr.readyState == 4 && xhr.status == 200){ //if ajax response status is 200 & ready status is 4 means there is no any error
             let response = xhr.response; // storing ajax response in a response variabel
             //change color to red
-            if(response.indexOf("Email and Password field is required!") != -1 || response.indexOf("Enter a valid email address!") != -1 || response.indexOf("Sorry failed send your message!" != -1 )){
+            if(response.indexOf("required") != -1 || response.indexOf("valid") != -1 || response.indexOf("failed") != -1){
                 statusTxt.style.color ="rgb(255, 22, 22)";
             }else{
                 form.reset();
